@@ -1,95 +1,24 @@
-const RAW_STORY_DATA = {
-    title: "A Fragging in Texas",
-    paragraphs: [
-        "An opposum on the other side of the fire coughed into her paw. A dark viscous substance splattered, consisting of a wet mixture of saliva and tar from many years tobacco use.",
-        "Harry's eyes were directed at the broken fragments of wood and kindling. The dog rubbed their curled paws to maintain some semblance of warmth. The scrapping of skin against skin, fur against fur. None of it... none of it got rid of a dead cold feeling that rose from his ribs to his chest. He could not feel warm in such a way as Lady Macbeth could not feel clean.",
-        "His breaths were scattered. A few wisps of cold air fluttered from underneath his nostrils.",
-        "Bringing his paws closer to his face, as if he had come to prayer, he had not noticed his disposition had been noticed by Annie.",
-        "She spoke to Roman.",
-        "\"I'll keep watch.\"",
-        "There was a grunt of approval, before the cloth of his tent shut.",
-        "Annie adjusted the dark brim of her hat before sitting next to Harry. She wore glasses due to her poor eyesight, and as such it wasn't the lifeless look in Harry's eyes that caught her attention- but the quiet whimpers that erupted from his neck.",
-        "She was sympathetic to Mr. Bleeding Heart. A man as young as him would see many things in their life, but not many were as unfortunate to bare witness such depths of depravity.",
-        "Wrapping her arm around his back, she watched as the dog silently cried into their wrist. Tear's cleaning nothing, except blurring the stain smudges of impurities left from weeks of travel on horse back.",
-        "As the lantern light faded from Romans tent, she looked into the distance at some suspicious sounds of foliage snapping. But since that was where the horses were, there was not much to amount to concern.",
-        "Nevertheless, the silence was deafening.",
-        "She reached into her satchel with her other hand. Inside was a bundle of dynamite, and a thread that required only the warmth provided from the dancing flames to be ignited.",
-        "It wasn't noticed immediately. But, after she had brought it closer to her lap so that she could inspect it, it was as if the dogs whimpers had been silenced.",
-        "His heart beat had changed, fluttering like a farm chickens wings while caught in the mouth of a wild fox. She was prescient to know he would ruin everything if he yelped. The oppossum's comforting grip over the dogs back changed to her sinking her non-retractable claws deep into his shoulder.",
-        "Unlike the folktale of a vampire that took pleasure in biting her victims, Annie took no sadistic enjoyment in feeling Harry's warm blood coursing over her sickly fingers.",
-        "Annie could see the change in his breath through how the puffs of cold air were in staggered twos, coming out of his nostrils like that of a train exhaust.",
-        "She stared at him.",
-        "They were of the same mind. She could read it in his eyes, the wobbling of the highlights of his eye like a constellation in the night sky. There was a name to those thoughts, even if he was too scared to be thinking them. But he did not have the will to act on them.",
-        "Epilogue",
-        "The sound of an ignited piece of fuse hisses through the air.",
-        "It is daybreak, the opossum brings a lit stick of tobacco to their mouth. She stares at the road ahead, and the trail from yesterday. The next town was only a few miles from here.",
-        "Behind Annie, the dog led two horses out of the bush. Roman's, and his own.",
-        "They would go on to continue their journey.",
-        "The clopping sound of hooves against dirt fading into a blur. The bandits left the bush, with one less in their company."
-    ]
-};
-
-const MAX_WORDS_PER_SLIDE = 16;
-
 function generateSlides(storyData) {
     const slides = [];
 
     slides.push({
         type: 'title',
         text: storyData.title,
-        subtitle: storyData.intro
+        subtitle: storyData.intro || ""
     });
 
-    storyData.paragraphs.forEach(para => {
-        const cleanPara = para.trim();
-        if (!cleanPara) return;
+    storyData.paragraphs.forEach(entry => {
+        const [slideNum, text] = Array.isArray(entry) ? entry : [null, entry];
+        const cleanText = text ? text.trim() : "";
+        
+        if (!cleanText) return;
 
-        if (cleanPara === "Epilogue") {
-            slides.push({ type: 'header', text: "Epilogue" });
-            return;
+        if (cleanText === "Epilogue") {
+            slides.push({ type: 'header', text: "Epilogue", slideNumber: slideNum });
+        } else {
+            slides.push({ type: 'text', text: cleanText, slideNumber: slideNum });
         }
-
-        const sentences = cleanPara.match(/[^.!?]+[.!?]+["’']?|[^.!?]+$/g) || [cleanPara];
-
-        sentences.forEach(sentence => {
-            let trimmed = sentence.trim();
-            if (!trimmed) return;
-
-            const words = trimmed.split(/\s+/);
-            
-            if (words.length > MAX_WORDS_PER_SLIDE) {
-                const clauses = trimmed.split(/(?<=[,;:\-—])\s+/);
-                let currentChunk = [];
-
-                clauses.forEach(clause => {
-                    const clauseWords = clause.split(/\s+/);
-                    if (currentChunk.length + clauseWords.length <= MAX_WORDS_PER_SLIDE) {
-                        currentChunk.push(clause);
-                    } else {
-                        if (currentChunk.length > 0) {
-                            slides.push({ type: 'text', text: currentChunk.join(' ') });
-                        }
-                        if (clauseWords.length > MAX_WORDS_PER_SLIDE) {
-                            for (let i = 0; i < clauseWords.length; i += MAX_WORDS_PER_SLIDE) {
-                                const sub = clauseWords.slice(i, i + MAX_WORDS_PER_SLIDE).join(' ');
-                                slides.push({ type: 'text', text: sub });
-                            }
-                            currentChunk = [];
-                        } else {
-                            currentChunk = [clause];
-                        }
-                    }
-                });
-
-                if (currentChunk.length > 0) {
-                    slides.push({ type: 'text', text: currentChunk.join(' ') });
-                }
-            } else {
-                slides.push({ type: 'text', text: trimmed });
-            }
-        });
     });
-
     slides.push({
         type: 'end',
         text: "The End"
