@@ -1,6 +1,5 @@
 const RAW_STORY_DATA = {
     title: "A Fragging in Texas",
-    intro: "Set during the Wild West, an opossum bandit and a canine sit around a campfire and decide what to do about their boss after he committed an unspeakable crime.",
     paragraphs: [
         "An opposum on the other side of the fire coughed into her paw. A dark viscous substance splattered, consisting of a wet mixture of saliva and tar from many years tobacco use.",
         "Harry's eyes were directed at the broken fragments of wood and kindling. The dog rubbed their curled paws to maintain some semblance of warmth. The scrapping of skin against skin, fur against fur. None of it... none of it got rid of a dead cold feeling that rose from his ribs to his chest. He could not feel warm in such a way as Lady Macbeth could not feel clean.",
