@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="text.css">
 </head>
 <body class="w-screen h-screen flex flex-col justify-between relative bg-black text-amber-100/90 overflow-hidden select-none">
     <canvas id="emberCanvas"></canvas>
     <header class="relative z-20 flex justify-end items-center p-4 md:p-6 opacity-75 hover:opacity-100 transition-opacity">
         <div class="flex items-center space-x-3 ui-font text-xs">
             <button id="audioBtn" class="p-2 rounded-full bg-stone-900/80 border border-stone-800 text-stone-400 hover:text-amber-400 hover:border-amber-700/50 transition-all flex items-center gap-1.5 px-3" title="Toggle Wind Ambience">
-                <img src="./svg/d.svg" width="24px" height="24px">
+                <img src="./svg/speaker/s_on.svg" width="24px" height="24px">
                 <span id="audioLabel" class="hidden sm:inline">Ambience</span>
             </button>
             <button id="textSizeBtn" class="p-2 rounded-full bg-stone-900/80 border border-stone-800 text-stone-400 hover:text-amber-400 hover:border-amber-700/50 transition-all px-3 flex items-center gap-1" title="Adjust Text Size">
@@ -23,21 +24,19 @@
                 <span class="text-base font-bold">A</span>
             </button>
             <button id="fullscreenBtn" class="p-2 rounded-full bg-stone-900/80 border border-stone-800 text-stone-400 hover:text-amber-400 hover:border-amber-700/50 transition-all" title="Toggle Fullscreen">
-                <img src="./svg/c.svg" width="24px" height="24px">
+                <img src="./svg/fullscreen_icon.svg" width="24px" height="24px">
             </button>
         </div>
     </header>
     <main id="tapArea" class="relative z-10 flex-1 flex flex-col justify-center items-center px-6 sm:px-12 md:px-20 max-w-4xl mx-auto w-full cursor-pointer group">
         <div id="slideBox" class="w-full text-center transition-all duration-300 transform fade-enter-active">
-            <h1 id="slideTitle" class="title-font text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider text-amber-500 mb-6 text-glow hidden">
-                A Fragging in Texas
-            </h1>
+            <h1 id="slideTitle" class="title-font text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider text-amber-500 mb-6 text-glow hidden"></h1>
             <div id="slideContent" class="text-xl sm:text-2xl md:text-3xl leading-relaxed sm:leading-loose text-stone-200 font-serif tracking-wide select-none"></div>
             <p id="slideSubtitle" class="mt-6 text-sm sm:text-base ui-font text-amber-600/80 font-light italic tracking-widest hidden max-w-lg mx-auto"></p>
         </div>
         <div id="tapHint" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 ui-font text-xs text-stone-600 tracking-widest uppercase flex items-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
             <span>Tap screen or press space</span>
-            <img src="./svg/b.svg" width="24px" height="24px">
+            <img src="./svg/arrow/a_right.svg" width="24px" height="24px">
         </div>
         <div id="endControls" class="hidden flex-col items-center gap-4 mt-8 z-30">
             <button id="restartBtn" class="ui-font px-8 py-3 bg-amber-700 hover:bg-amber-600 active:scale-95 text-stone-950 font-bold tracking-wider uppercase rounded-full shadow-lg shadow-amber-900/40 transition-all flex items-center gap-2">
@@ -53,7 +52,7 @@
 
         <div class="w-full max-w-md flex justify-between items-center ui-font text-xs text-stone-500">
             <button id="prevBtn" class="hover:text-amber-400 disabled:opacity-20 disabled:hover:text-stone-500 transition-colors flex items-center gap-1 p-2">
-                <img src="./svg/g.svg" width="24px" height="24px">
+                <img src="./svg/arrow/a_left.svg" width="24px" height="24px">
                 <span>Back</span>
             </button>
             <div id="slideCounter" class="font-mono text-stone-400 font-medium tracking-widest bg-stone-900/80 px-3 py-1 rounded-full border border-stone-800/80">
@@ -61,7 +60,7 @@
             </div>
             <button id="nextBtn" class="hover:text-amber-400 disabled:opacity-20 disabled:hover:text-stone-500 transition-colors flex items-center gap-1 p-2">
                 <span>Next</span>
-                <img src="./svg/f.svg" width="24px" height="24px">
+                <img src="./svg/arrow/a_right.svg" width="24px" height="24px">
             </button>
         </div>
     </footer>

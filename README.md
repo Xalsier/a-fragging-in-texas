@@ -1,4 +1,4 @@
-# A Fragging in Texas
+# A Fragging in Texas (0.1)
 
 Set during the Wild West, an opossum bandit and a canine sit around a campfire and decide what to do about their boss after he committed an unspeakable crime.
 
