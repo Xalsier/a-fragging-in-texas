@@ -19,6 +19,7 @@ function generateSlides(storyData) {
             slides.push({ type: 'text', text: cleanText, slideNumber: slideNum });
         }
     });
+    
     slides.push({
         type: 'end',
         text: "The End"
@@ -27,8 +28,9 @@ function generateSlides(storyData) {
     return slides;
 }
 
-const slides = generateSlides(RAW_STORY_DATA);
+let slides = [];
 let currentIndex = 0;
+
 const tapArea = document.getElementById('tapArea');
 const slideBox = document.getElementById('slideBox');
 const slideTitle = document.getElementById('slideTitle');
@@ -41,7 +43,25 @@ const nextBtn = document.getElementById('nextBtn');
 const tapHint = document.getElementById('tapHint');
 const endControls = document.getElementById('endControls');
 const restartBtn = document.getElementById('restartBtn');
+
+async function initStory() {
+    try {
+        const response = await fetch('./json/story.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const storyData = await response.json();
+        
+        slides = generateSlides(storyData);
+        renderSlide(currentIndex, false);
+    } catch (error) {
+        console.error("Failed to load story data:", error);
+        slideContent.textContent = "Error loading story data. Please check connection or JSON path.";
+    }
+}
+
 function renderSlide(index, animate = true) {
+    if (!slides.length) return;
     const slide = slides[index];
 
     if (animate) {
@@ -157,3 +177,5 @@ window.addEventListener('touchend', (e) => {
         }
     }
 }, { passive: true });
+
+initStory();

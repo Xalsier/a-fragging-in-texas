@@ -1,6 +1,6 @@
-const RAW_STORY_DATA = {
-    title: "A Fragging in Texas",
-    paragraphs: [
+{
+    "title": "A Fragging in Texas",
+    "paragraphs": [
         [1, "An opposum on the other side of the fire coughed into her paw."],
         [2, "A dark viscous substance splattered,"],
         [3, "consisting of a wet mixture of saliva and tar from many years tobacco use."],
@@ -69,4 +69,4 @@ const RAW_STORY_DATA = {
         [66, "The bandits left the bush,"],
         [67, "with one less in their company."]
     ]
-};
+}
