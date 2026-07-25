@@ -5,7 +5,6 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 ## To-Do
 
 * Narration
-* Resolve audio issue on mobile.
 
 ## External links
 
