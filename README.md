@@ -7,10 +7,6 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 * Narration
 * Resolve audio issue on mobile.
 
-## Dependencies
-
-* Tailwind CSS
-
 ## External links
 
 * <a href="https://xalsier.itch.io/a-fragging-in-texas">Itch.io</a>

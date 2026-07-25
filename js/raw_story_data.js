@@ -1,6 +1,5 @@
 const RAW_STORY_DATA = {
     title: "A Fragging in Texas",
-    intro: "",
     paragraphs: [
         [1, "An opposum on the other side of the fire coughed into her paw."],
         [2, "A dark viscous substance splattered,"],

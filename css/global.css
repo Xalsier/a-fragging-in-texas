@@ -1,0 +1,22 @@
+:root {
+    --color-bg: #000000;
+    --color-text: rgba(254, 243, 199, 0.9); 
+    --color-text-muted: #e7e5e4;
+    --color-amber-main: #f59e0b; 
+    --color-amber-dark: #b45309; 
+    --color-stone-bg: rgba(28, 25, 23, 0.8);
+    --color-stone-border: #292524; 
+    --color-stone-text: #a8a29e; 
+  }
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../font/cinzel.tff') format('truetype');
+    font-weight: 400 800; /* Supports normal to heavy weights */
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while loading */
+  }
+  
+  .title-font {
+    font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+  }

@@ -1,7 +1,15 @@
-#slideTitle {
-    content: "A Fragging in Texas"
-}
-
-#restartBtn {
-    content: "Read Again"
-}
+/* Base slide content styling */
+.slide-content {
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    font-family: serif;
+    letter-spacing: 0.025em;
+    text-align: center;
+  }
+  
+  /* Font scale modifier classes */
+  .slide-content.scale-sm { font-size: 1.1rem; }
+  .slide-content.scale-md { font-size: 1.35rem; }
+  .slide-content.scale-lg { font-size: 1.65rem; }
+  .slide-content.scale-xl { font-size: 2rem; }

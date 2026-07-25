@@ -29,9 +29,6 @@ function generateSlides(storyData) {
 
 const slides = generateSlides(RAW_STORY_DATA);
 let currentIndex = 0;
-let fontScaleLevel = 1; 
-const fontScaleClasses = ['text-lg sm:text-xl md:text-2xl', 'text-xl sm:text-2xl md:text-3xl', 'text-2xl sm:text-3xl md:text-4xl'];
-
 const tapArea = document.getElementById('tapArea');
 const slideBox = document.getElementById('slideBox');
 const slideTitle = document.getElementById('slideTitle');
@@ -44,9 +41,6 @@ const nextBtn = document.getElementById('nextBtn');
 const tapHint = document.getElementById('tapHint');
 const endControls = document.getElementById('endControls');
 const restartBtn = document.getElementById('restartBtn');
-const textSizeBtn = document.getElementById('textSizeBtn');
-const fullscreenBtn = document.getElementById('fullscreenBtn');
-
 function renderSlide(index, animate = true) {
     const slide = slides[index];
 
@@ -163,18 +157,3 @@ window.addEventListener('touchend', (e) => {
         }
     }
 }, { passive: true });
-
-textSizeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    fontScaleLevel = (fontScaleLevel + 1) % fontScaleClasses.length;
-    slideContent.className = `text-center leading-relaxed sm:leading-loose text-stone-200 font-serif tracking-wide select-none ${fontScaleClasses[fontScaleLevel]}`;
-});
-
-fullscreenBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
-    } else {
-        if (document.exitFullscreen) document.exitFullscreen();
-    }
-});

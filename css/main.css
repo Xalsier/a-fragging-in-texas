@@ -1,0 +1,15 @@
+body {
+    font-family: 'IM Fell English', Georgia, serif;
+    background-color: #050404;
+    color: #e5e0d8;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
