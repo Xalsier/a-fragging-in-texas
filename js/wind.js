@@ -15,7 +15,7 @@ async function initAudio() {
     audioGain.gain.value = 0; 
     audioGain.connect(audioCtx.destination);
     try {
-        const response = await fetch('wind.ogg');
+        const response = await fetch('wind.mp3');
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
         audioSource = audioCtx.createBufferSource();
@@ -28,7 +28,7 @@ async function initAudio() {
             audioGain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.2);
         }
     } catch (err) {
-        console.error("Failed to load wind.ogg:", err);
+        console.error("Failed to load wind.mp3:", err);
     }
 }
 audioBtn.addEventListener('click', async (e) => {
