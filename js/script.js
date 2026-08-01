@@ -17,7 +17,7 @@ function generateSlides(storyData) {
     });
     slides.push({
         type: 'end',
-        text: "The End"
+        text: "(If you liked this short story, please leave a rating!)"
     });
     return slides;
 }
