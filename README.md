@@ -6,6 +6,9 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 
 * Narration
 
+// Slide 3 - Of
+// Slide 23 - As Him
+
 ## External links
 
 <center>
