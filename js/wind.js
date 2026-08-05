@@ -24,33 +24,21 @@ async function initAudio() {
         audioSource.connect(audioGain);
         audioSource.start(0);
         isLoaded = true;
-        if (isAudioPlaying) {
-            audioGain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.2);
-        }
-    } catch (err) {
-        console.error("Failed to load wind.mp3:", err);
-    }
+        if (isAudioPlaying) { audioGain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.2); }
+    } catch (err) { console.error("Failed to load wind.mp3:", err); }
 }
 audioBtn.addEventListener('click', async (e) => {
     e.stopPropagation();
-    if (!audioCtx) {
-        initAudio();
-    }
-    if (audioCtx && audioCtx.state === 'suspended') {
-        await audioCtx.resume();
-    }
+    if (!audioCtx) { initAudio(); }
+    if (audioCtx && audioCtx.state === 'suspended') { await audioCtx.resume(); }
     isAudioPlaying = !isAudioPlaying;
     if (isAudioPlaying) {
-        if (audioGain && isLoaded) {
-            audioGain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.2); 
-        }
+        if (audioGain && isLoaded) { audioGain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.2); }
         audioOffIcon.classList.add('hidden');
         audioOnIcon.classList.remove('hidden');
         audioLabel.textContent = "Mute";
     } else {
-        if (audioGain) {
-            audioGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.2);
-        }
+        if (audioGain) { audioGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.2); }
         audioOffIcon.classList.remove('hidden');
         audioOnIcon.classList.add('hidden');
         audioLabel.textContent = "Ambience";

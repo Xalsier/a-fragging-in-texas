@@ -7,9 +7,7 @@ window.addEventListener('resize', () => {
     height = canvas.height = window.innerHeight;
 });
 class Ember {
-    constructor() {
-        this.reset();
-    }
+    constructor() { this.reset(); }
     reset() {
         this.x = width / 2 + (Math.random() - 0.5) * (width * 0.6);
         this.y = height + 10;
@@ -25,9 +23,7 @@ class Ember {
         this.y -= this.speedY;
         this.x += this.speedX + Math.sin(this.y * 0.02) * 0.3;
         this.opacity -= this.fadeRate;
-        if (this.opacity <= 0 || this.y < -10) {
-            this.reset();
-        }
+        if (this.opacity <= 0 || this.y < -10) { this.reset(); }
     }
     draw() {
         ctx.save();
@@ -44,13 +40,7 @@ class Ember {
 const embers = Array.from({ length: 45 }, () => new Ember());
 function animateEmbers() {
     ctx.clearRect(0, 0, width, height);
-    embers.forEach(ember => {
-        ember.update();
-        ember.draw();
-    });
+    embers.forEach(ember => { ember.update(); ember.draw(); });
     requestAnimationFrame(animateEmbers);
 }
-window.onload = () => {
-    renderSlide(currentIndex, false);
-    animateEmbers();
-};
+window.onload = () => { renderSlide(currentIndex, false); animateEmbers(); };

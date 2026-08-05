@@ -9,16 +9,10 @@ function generateSlides(storyData) {
         const [slideNum, text] = Array.isArray(entry) ? entry : [null, entry];
         const cleanText = text ? text.trim() : "";
         if (!cleanText) return;
-        if (cleanText === "Epilogue") {
-            slides.push({ type: 'header', text: "Epilogue", slideNumber: slideNum });
-        } else {
-            slides.push({ type: 'text', text: cleanText, slideNumber: slideNum });
-        }
+        if (cleanText === "Epilogue") { slides.push({ type: 'header', text: "Epilogue", slideNumber: slideNum });
+        } else { slides.push({ type: 'text', text: cleanText, slideNumber: slideNum });}
     });
-    slides.push({
-        type: 'end',
-        text: "(If you liked this short story, please leave a rating!)"
-    });
+    slides.push({ type: 'end', text: "(If you liked this short story, please leave a rating!)" });
     return slides;
 }
 let slides = [];
@@ -37,9 +31,7 @@ const endControls = document.getElementById('endControls');
 const restartBtn = document.getElementById('restartBtn');
 async function initStory() {
     const response = await fetch('./json/story.json');
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
     const storyData = await response.json();
     slides = generateSlides(storyData);
     renderSlide(currentIndex, false);
@@ -55,9 +47,7 @@ function renderSlide(index, animate = true) {
             slideBox.classList.remove('fade-exit-active');
             slideBox.classList.add('fade-enter-active');
         }, 180);
-    } else {
-        updateSlideDOM(slide, index);
-    }
+    } else { updateSlideDOM(slide, index); }
 }
 function updateSlideDOM(slide, index) {
     slideCounter.textContent = `${index + 1} / ${slides.length}`;
@@ -74,43 +64,21 @@ function updateSlideDOM(slide, index) {
         slideContent.textContent = "";
         slideSubtitle.textContent = slide.subtitle;
         slideSubtitle.classList.remove('hidden');
-    } else if (slide.type === 'header') {
-        slideContent.innerHTML = `<span></span>`;
+    } else if (slide.type === 'header') { slideContent.innerHTML = `<span></span>`;
     } else if (slide.type === 'end') {
         slideContent.innerHTML = `<span>${slide.text}</span>`;
         tapHint.classList.add('hidden');
         endControls.classList.remove('hidden');
         endControls.classList.add('flex');
-    } else {
-        slideContent.textContent = slide.text;
-    }
+    } else { slideContent.textContent = slide.text; }
     prevBtn.disabled = (index === 0);
     nextBtn.disabled = (index === slides.length - 1);
 }
-function goToNext() {
-    if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        renderSlide(currentIndex);
-    }
-}
-function goToPrev() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        renderSlide(currentIndex);
-    }
-}
-tapArea.addEventListener('click', (e) => {
-    if (e.target.closest('#endControls') || e.target.closest('button')) return;
-    goToNext();
-});
-prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    goToPrev();
-});
-nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    goToNext();
-});
+function goToNext() { if (currentIndex < slides.length - 1) { currentIndex++; renderSlide(currentIndex); }}
+function goToPrev() { if (currentIndex > 0) { currentIndex--; renderSlide(currentIndex); }}
+tapArea.addEventListener('click', (e) => { if (e.target.closest('#endControls') || e.target.closest('button')) return; goToNext(); });
+prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goToPrev(); });
+nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goToNext(); });
 restartBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     currentIndex = 0;
@@ -136,8 +104,6 @@ window.addEventListener('touchend', (e) => {
     const touchEndY = e.changedTouches[0].screenY;
     const diffX = touchEndX - touchStartX;
     const diffY = touchEndY - touchStartY;
-    if (Math.abs(diffX) > 50 && Math.abs(diffY) < 60) {
-        diffX < 0 ? goToNext() : goToPrev();
-    }
+    if (Math.abs(diffX) > 50 && Math.abs(diffY) < 60) { diffX < 0 ? goToNext() : goToPrev(); }
 }, { passive: true });
 initStory();

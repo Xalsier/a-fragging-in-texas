@@ -1,9 +1,5 @@
-const fullscreenBtn = document.getElementById('fullscreenBtn');
-fullscreenBtn.addEventListener('click', (e) => {
+document.getElementById('fullscreenBtn').addEventListener('click', (e) => {
     e.stopPropagation();
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
-    } else {
-        if (document.exitFullscreen) document.exitFullscreen();
-    }
+    if (!document.fullscreenElement) { document.documentElement.requestFullscreen().catch(() => {});
+    } else { if (document.exitFullscreen) document.exitFullscreen(); }
 });
