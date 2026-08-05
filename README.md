@@ -4,10 +4,19 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 
 ## To-Do
 
-* Narration
+* Narration (Not done)
+* Addition of Epigraph to add context that the scene is referencing Macbeth. Lady Macbeth (Act 5 Scene 1 - Macbeth) (Not done)
+
+// "Out, damned spot, out, I say!"
 
 // Slide 3 - Of
 // Slide 23 - As Him
+// Slide - **To** such depths
+// Slide 57 - Oppossum
+
+### Cut Content 
+
+// Slide 18 "due to her poor eyesight"
 
 ## External links
 
