@@ -11,8 +11,8 @@ class Ember {
     reset() {
         this.x = width / 2 + (Math.random() - 0.5) * (width * 0.6);
         this.y = height + 10;
-        this.size = Math.random() * 2.2 + 0.8;
-        this.speedY = Math.random() * 0.8 + 0.4;
+        this.size = Math.random() * 8.2 + 0.8;
+        this.speedY = Math.random() * 0.4 + 0.4;
         this.speedX = (Math.random() - 0.5) * 0.6;
         this.opacity = Math.random() * 0.7 + 0.3;
         this.fadeRate = Math.random() * 0.003 + 0.001;
@@ -29,7 +29,7 @@ class Ember {
         ctx.save();
         ctx.globalAlpha = Math.max(0, this.opacity);
         ctx.fillStyle = this.color;
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 12;
         ctx.shadowColor = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
