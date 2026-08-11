@@ -1,5 +1,5 @@
 :root {
-    --color-bg: #000000;
+    --color-bg: #131010;
     --color-text: rgba(254, 243, 199, 0.9); 
     --color-text-muted: #e7e5e4;
     --color-amber-main: #f59e0b; 
@@ -12,11 +12,15 @@
 @font-face {
     font-family: 'Cinzel';
     src: url('../font/cinzel.tff') format('truetype');
-    font-weight: 400 800; /* Supports normal to heavy weights */
+    font-weight: 400 800; 
     font-style: normal;
-    font-display: swap; /* Keeps text visible while loading */
+    font-display: swap; 
   }
   
   .title-font {
     font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+  }
+
+  main {
+    background-color:#131010c2; /* This will prevent the Unity particles from overpowering the slide text */
   }

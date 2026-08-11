@@ -5,7 +5,8 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 ## To-Do
 
 * Narration (Not done)
-* Addition of Epigraph to add context that the scene is referencing Macbeth. Lady Macbeth (Act 5 Scene 1 - Macbeth) (Not done)
+* Addition of Epigraph to add context that the scene is referencing Macbeth. Lady Macbeth (Act 5 Scene 1 - Macbeth) (Done)
+* Replaced Javascript particles with Unity Particles
 
 // "Out, damned spot, out, I say!"
 
