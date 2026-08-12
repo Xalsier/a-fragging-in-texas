@@ -1,0 +1,12 @@
+@media (min-width: 768px) { .app-header { padding: 1.5rem;} }
+@media (min-width: 768px) { .app-footer { padding: 1.5rem; } }
+@media (min-width: 640px) { .label-sm { display: inline; } }
+@media (min-width: 640px) { .story-container { padding: 0 3rem; } }
+@media (min-width: 768px) { .story-container { padding: 0 5rem; } }
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../font/cinzel.tff') format('truetype');
+    font-weight: 400 800; 
+    font-style: normal;
+    font-display: swap; 
+}

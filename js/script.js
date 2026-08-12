@@ -77,10 +77,9 @@ function updateSlideDOM(slide, index) {
 function goToNext() { if (currentIndex < slides.length - 1) { currentIndex++; renderSlide(currentIndex); }}
 function goToPrev() { if (currentIndex > 0) { currentIndex--; renderSlide(currentIndex); }}
 tapArea.addEventListener('click', (e) => { if (e.target.closest('#endControls') || e.target.closest('button')) return; goToNext(); });
-prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goToPrev(); });
-nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goToNext(); });
+prevBtn.addEventListener('click', (e) => { goToPrev(); });
+nextBtn.addEventListener('click', (e) => { goToNext(); });
 restartBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
     currentIndex = 0;
     renderSlide(currentIndex);
 });

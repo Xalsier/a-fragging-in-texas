@@ -8,14 +8,6 @@
     --color-stone-border: #292524; 
     --color-stone-text: #a8a29e; 
   }
-
-@font-face {
-    font-family: 'Cinzel';
-    src: url('../font/cinzel.tff') format('truetype');
-    font-weight: 400 800; 
-    font-style: normal;
-    font-display: swap; 
-  }
   
   .title-font {
     font-family: 'Cinzel', Georgia, 'Times New Roman', serif;

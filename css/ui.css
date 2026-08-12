@@ -1,0 +1,40 @@
+.app-header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+  
+.app-header:hover {
+    opacity: 1;
+}
+
+.app-footer {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to top, #000 0%, rgba(0,0,0,0.9) 70%, transparent 100%);
+    opacity: 0;
+    pointer-events: none;
+} 
+
+.story-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fadein-ui {
+    transition: opacity 2s ease-in-out;
+    opacity:1;
+    pointer-events: auto;
+}
