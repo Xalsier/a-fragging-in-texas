@@ -8,6 +8,7 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 * Addition of Epigraph to add context that the scene is referencing Macbeth. Lady Macbeth (Act 5 Scene 1 - Macbeth) (Done)
 * Replaced Javascript particles with Unity Particles
 * Include the Cover Art somehow (Not done)
+* Possible Spanish Translation
 
 // "Out, damned spot, out, I say!"
 
@@ -34,3 +35,8 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 * <a href="https://www.librarything.com/work/36828671">LibraryThing</a>
 * <a href="https://xalsier.com/texas">Xalsier.com</a>
 </center>
+
+## Translation References
+
+* https://es.wikisource.org/wiki/Macbeth_%28Menéndez_y_Pelayo_tr.%29/Acto_V
+* https://es.wikipedia.org/wiki/Lady_Macbeth

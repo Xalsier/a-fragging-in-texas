@@ -30,7 +30,7 @@ const tapHint = document.getElementById('tapHint');
 const endControls = document.getElementById('endControls');
 const restartBtn = document.getElementById('restartBtn');
 async function initStory() {
-    const response = await fetch('./json/story.json');
+    const response = await fetch('./lang/en.json');
     if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
     const storyData = await response.json();
     slides = generateSlides(storyData);
