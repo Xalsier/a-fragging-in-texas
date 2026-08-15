@@ -41,3 +41,9 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 * https://es.wikisource.org/wiki/Macbeth_%28Menéndez_y_Pelayo_tr.%29/Acto_V
 * https://es.wikipedia.org/wiki/Lady_Macbeth
 * https://es.wikipedia.org/wiki/Epílogo_(narratología)
+* https://context.reverso.net/translation/spanish-english/haré+guardia
+
+* y su propio, not y el propio
+* Fijamente (focused looking) mirando (general looking)
+
+* Credits Mishi
