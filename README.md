@@ -46,4 +46,4 @@ Set during the Wild West, an opossum bandit and a canine sit around a campfire a
 * y su propio, not y el propio
 * Fijamente (focused looking) mirando (general looking)
 
-* Credits Mishi
+* Spanish Credits: Mishi, Saechem
